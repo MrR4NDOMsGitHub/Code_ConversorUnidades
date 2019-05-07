@@ -1,12 +1,12 @@
+
 package proyecto;
 
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class Main {
 
-    public static void main(String[] args) {
-        Scanner tec = new Scanner(System.in);
+public class Lonxitude {
+   Scanner tec = new Scanner(System.in);
          String resp;
         
         String[] opciones = {"Lonxitude", "Potencia", "", "Salir"};
@@ -26,7 +26,5 @@ public class Main {
 
             }
         } while (!resp.equals("Salir"));
-        
-    }
-
+    
 }
