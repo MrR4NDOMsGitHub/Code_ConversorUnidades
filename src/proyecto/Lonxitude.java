@@ -26,13 +26,19 @@ public class Lonxitude {
                     
                     break;
                 case "Transformar Millas a Pulgadas":
-                    
+                    System.out.println("Dime un número");
+                    MillasPulgadas(tec.nextDouble());
                     break;
                 case "Transformar Pulgadas a Millas":
                            
                         break;
             }
         } while (!resp.equals("Salir"));
+    }
+    
+    public void MillasPulgadas(double milla){
+        double conversion=milla*63360;
+        System.out.println("El número" +milla+" en pulgadas es: " +conversion);
     }
 }
 
