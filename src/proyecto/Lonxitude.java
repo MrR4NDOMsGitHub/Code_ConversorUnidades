@@ -20,7 +20,7 @@ public class Lonxitude {
             resp = (String) JOptionPane.showInputDialog(null, "Seleccione una opcion: ", "Menu", JOptionPane.DEFAULT_OPTION, null, opciones, opciones[0]);
             switch (resp) {
                 case "Transformar Kms a Millas":
-                    //Lonxitude
+                    KmsMillas(tec.nextDouble());
                     break;
                 case "Transformar Millas a Kms":
                     
@@ -33,6 +33,11 @@ public class Lonxitude {
                         break;
             }
         } while (!resp.equals("Salir"));
+    }
+    public void KmsMillas(double valor){
+        double res;
+        res=valor*0.6214;
+        System.out.println("El resultado de la conversión es: "+res);
     }
 }
 
