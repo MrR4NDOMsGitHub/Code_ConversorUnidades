@@ -27,7 +27,8 @@ public class Potencia {
 
                     break;
                 case "KW a Ft/Lb":
-                    System.out.println("Dime un número");
+                    System.out.println("Escribe un numero:");
+                    KWaFtLb(tec.nextDouble());
 
                     break;
                 case "Ft/Lb a KW":
@@ -36,7 +37,6 @@ public class Potencia {
             }
         } while (!resp.equals("Salir"));
     }
-
 
     public void FtLb_To_KW() {
         System.out.println("Introduce el valor:");
@@ -52,9 +52,15 @@ public class Potencia {
         System.out.println("El numero " + num + " en KW es " + KW);
     }
 
+    public void KWaCV(double KW) {
+        double conversion = KW * 1.34102;
+        System.out.println("El número " + KW + " en CV es: " + conversion);
 
-    public void KWaCV(double KW){
-        double conversion=KW*1.34102;
-        System.out.println("El número "+KW+" en CV es: "+conversion);
+    }
+
+    public void KWaFtLb(double valor) {
+        double res = valor * 737.562149;
+        System.out.println("El resultado de la conversion es: " + res);
+
     }
 }
