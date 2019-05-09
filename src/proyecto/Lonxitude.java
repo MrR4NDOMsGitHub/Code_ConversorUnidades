@@ -28,11 +28,21 @@ public class Lonxitude {
                 case "Transformar Millas a Pulgadas":
                     
                     break;
-                case "Transformar Pulgadas a Millas":
-                           
-                        break;
+                case "Transformar Pulgadas a Millas":   
+                    PulgadaMillas();
+                    break;
             }
         } while (!resp.equals("Salir"));
+    }
+    
+    public void PulgadaMillas(){
+        System.out.println("Introduce el valor en pulgadas:");
+        Scanner tec = new Scanner(System.in);
+        double valor=tec.nextDouble();
+        double millas = Math.round((valor/63360)*100)/100;
+        System.out.println("El valor de "+valor+" pulgadas son "+millas+" millas");
+    
+    
     }
 }
 
