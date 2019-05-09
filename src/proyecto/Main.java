@@ -21,8 +21,9 @@ public class Main {
                     Potencia w = new Potencia();
                     w.MainPot();
                     break;
-                case "":
-
+                case "Temperatura":
+                    Temperatura temp = new Temperatura();
+                    temp.MainTemp();
                     break;
 
             }
