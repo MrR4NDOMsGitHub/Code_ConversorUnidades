@@ -24,6 +24,8 @@ public class Lonxitude {
                     break;
                 case "Transformar Millas a Kms":
                     
+                    System.out.println("Introduce un número: ");
+                    MillasKM(tec.nextDouble());
                     break;
                 case "Transformar Millas a Pulgadas":
                     
@@ -33,6 +35,10 @@ public class Lonxitude {
                         break;
             }
         } while (!resp.equals("Salir"));
+    }
+    public void MillasKM(double num){
+        double KM = num * (1.609);
+        System.out.println("El numero "+ num + " en KM es "+ KM);
     }
 }
 
