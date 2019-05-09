@@ -22,6 +22,7 @@ public class Potencia {
                 case "CV a KW":
 
                     System.out.println("Introduce un número: ");
+                    CVaKW(tec.nextDouble());
 
                     break;
                 case "KW a Ft/Lb":
@@ -34,13 +35,19 @@ public class Potencia {
             }
         } while (!resp.equals("Salir"));
     }
-    
-    public void FtLb_To_KW(){
+
+    public void FtLb_To_KW() {
         System.out.println("Introduce el valor:");
         Scanner tec = new Scanner(System.in);
         double valor = tec.nextDouble();
         double millas = Math.round((valor * 0.0014) * 100) / 100;
         System.out.println("El valor de " + valor + " FtLb son " + millas + " KW");
 
-}
+    }
+
+    public void CVaKW(double num) {
+        double KW = num * (0.7457);
+        System.out.println("El numero " + num + " en KW es " + KW);
+    }
+
 }
