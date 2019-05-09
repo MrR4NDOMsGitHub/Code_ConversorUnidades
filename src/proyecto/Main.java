@@ -7,8 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner tec = new Scanner(System.in);
-         String resp;
-        
+        String resp;
+
         String[] opciones = {"Lonxitude", "Potencia", "", "Salir"};
         do {
             resp = (String) JOptionPane.showInputDialog(null, "Seleccione una opcion: ", "Menu", JOptionPane.DEFAULT_OPTION, null, opciones, opciones[0]);
@@ -18,15 +18,15 @@ public class Main {
                     Obj.MainLonx();
                     break;
                 case "Potencia":
-                    
+                    Potencia w = new Potencia();
+                    w.MainPot();
                     break;
                 case "":
-                    
+
                     break;
-                
 
             }
         } while (!resp.equals("Salir"));
-        
+
     }
 }
