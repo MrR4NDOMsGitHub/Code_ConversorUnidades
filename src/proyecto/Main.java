@@ -14,7 +14,8 @@ public class Main {
             resp = (String) JOptionPane.showInputDialog(null, "Seleccione una opcion: ", "Menu", JOptionPane.DEFAULT_OPTION, null, opciones, opciones[0]);
             switch (resp) {
                 case "Lonxitude":
-                    //Lonxitude
+                    Lonxitude Obj = new Lonxitude();
+                    Obj.MainLonx();
                     break;
                 case "Potencia":
                     
