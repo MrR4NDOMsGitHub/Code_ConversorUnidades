@@ -29,9 +29,18 @@ public class Potencia {
 
                     break;
                 case "Ft/Lb a KW":
-
+                    FtLb_To_KW();
                     break;
             }
         } while (!resp.equals("Salir"));
     }
+    
+    public void FtLb_To_KW(){
+        System.out.println("Introduce el valor:");
+        Scanner tec = new Scanner(System.in);
+        double valor = tec.nextDouble();
+        double millas = Math.round((valor * 0.0014) * 100) / 100;
+        System.out.println("El valor de " + valor + " FtLb son " + millas + " KW");
+
+}
 }
