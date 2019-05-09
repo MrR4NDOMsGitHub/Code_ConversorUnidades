@@ -22,6 +22,7 @@ public class Potencia {
                 case "CV a KW":
 
                     System.out.println("Introduce un número: ");
+                    CVaKW(tec.nextDouble());
 
                     break;
                 case "KW a Ft/Lb":
@@ -33,5 +34,10 @@ public class Potencia {
                     break;
             }
         } while (!resp.equals("Salir"));
+    }
+    
+    public void CVaKW(double num){
+        double KW = num * (0.7457);
+        System.out.println("El numero " + num + " en KW es " + KW);
     }
 }
