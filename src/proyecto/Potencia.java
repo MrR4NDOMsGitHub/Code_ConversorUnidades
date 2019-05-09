@@ -25,7 +25,8 @@ public class Potencia {
 
                     break;
                 case "KW a Ft/Lb":
-                    System.out.println("Dime un número");
+                    System.out.println("Escribe un numero:");
+                    KWaFtLb(tec.nextDouble());
 
                     break;
                 case "Ft/Lb a KW":
@@ -33,5 +34,9 @@ public class Potencia {
                     break;
             }
         } while (!resp.equals("Salir"));
+    }
+    public void KWaFtLb(double valor){
+        double res=valor*737.562149;
+        System.out.println("El resultado de la conversion es: "+res);
     }
 }
