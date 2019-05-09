@@ -17,7 +17,8 @@ public class Potencia {
             resp = (String) JOptionPane.showInputDialog(null, "Seleccione una opcion: ", "Menu", JOptionPane.DEFAULT_OPTION, null, opciones, opciones[0]);
             switch (resp) {
                 case "KW a CV":
-
+                    System.out.println("Dime un número en kw");
+                    KWaCV(tec.nextDouble());
                     break;
                 case "CV a KW":
 
@@ -36,6 +37,7 @@ public class Potencia {
         } while (!resp.equals("Salir"));
     }
 
+
     public void FtLb_To_KW() {
         System.out.println("Introduce el valor:");
         Scanner tec = new Scanner(System.in);
@@ -50,4 +52,9 @@ public class Potencia {
         System.out.println("El numero " + num + " en KW es " + KW);
     }
 
+
+    public void KWaCV(double KW){
+        double conversion=KW*1.34102;
+        System.out.println("El número "+KW+" en CV es: "+conversion);
+    }
 }
