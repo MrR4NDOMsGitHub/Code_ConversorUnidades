@@ -30,9 +30,19 @@ public class Temperatura {
 
                     break;
                 case "Kelvin a Celsius":
-
+                    KelvinToCelsius();
                     break;
             }
         } while (!resp.equals("Salir"));
     }
+    
+      public void KelvinToCelsius() {
+        System.out.println("Introduce el valor:");
+        Scanner tec = new Scanner(System.in);
+        double valor = tec.nextDouble();
+        double millas = Math.round((valor -273.1)* 100) / 100;
+        System.out.println("El valor de " + valor + " Kelvin son: " + millas + " Celsius");
+
+    }
+      
 }
