@@ -17,7 +17,8 @@ public class Temperatura {
             resp = (String) JOptionPane.showInputDialog(null, "Seleccione una opcion: ", "Menu", JOptionPane.DEFAULT_OPTION, null, opciones, opciones[0]);
             switch (resp) {
                 case "Celsius a Fahrenheit":
-                    System.out.println("Dime un número en kw");
+                    System.out.println("Dime un número: ");
+                    CelsiusAFarenheit(tec.nextDouble());
 
                     break;
                 case "Fahrenheit a Celsius":
@@ -35,4 +36,9 @@ public class Temperatura {
             }
         } while (!resp.equals("Salir"));
     }
+    public void CelsiusAFarenheit(double centigrados){
+        double temperatura=(centigrados*1.8)+32;
+        System.out.println("O resultado da conversión e: "+temperatura);
+    }
+    
 }

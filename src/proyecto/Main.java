@@ -9,7 +9,7 @@ public class Main {
         Scanner tec = new Scanner(System.in);
         String resp;
 
-        String[] opciones = {"Lonxitude", "Potencia", "", "Salir"};
+        String[] opciones = {"Lonxitude", "Potencia", "Temperatura", "Salir"};
         do {
             resp = (String) JOptionPane.showInputDialog(null, "Seleccione una opcion: ", "Menu", JOptionPane.DEFAULT_OPTION, null, opciones, opciones[0]);
             switch (resp) {
