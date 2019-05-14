@@ -27,7 +27,7 @@ public class Temperatura {
                     break;
                 case "Celsius a Kelvin":
                     System.out.println("Escribe un numero:");
-
+                    CelsiusKelvin(tec.nextDouble());
                     break;
                 case "Kelvin a Celsius":
                     KelvinToCelsius();
@@ -35,6 +35,7 @@ public class Temperatura {
             }
         } while (!resp.equals("Salir"));
     }
+
     
       public void KelvinToCelsius() {
         System.out.println("Introduce el valor:");
@@ -45,4 +46,10 @@ public class Temperatura {
 
     }
       
+
+    public void CelsiusKelvin(double Celsius){
+        double conversion = Celsius+273.15;
+        System.out.println("El número " + Celsius + " en pulgadas es: " + conversion);
+    }
+
 }
