@@ -52,4 +52,10 @@ public class Temperatura {
         System.out.println("El número " + Celsius + " en pulgadas es: " + conversion);
     }
 
+    
+    public void FAaCelsius(double num) {
+        double celsius=(num-32)*5/9;
+        System.out.println("El número " + num + " en Celsius es: " + celsius);
+    }
+    
 }
