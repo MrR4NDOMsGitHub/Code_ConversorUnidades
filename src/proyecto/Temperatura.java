@@ -35,4 +35,10 @@ public class Temperatura {
             }
         } while (!resp.equals("Salir"));
     }
+    
+    public void FAaCelsius(double num) {
+        double celsius=(num-32)*5/9;
+        System.out.println("El número " + num + " en Celsius es: " + celsius);
+    }
+    
 }
