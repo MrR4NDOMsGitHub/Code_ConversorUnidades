@@ -10,56 +10,149 @@ public class Lonxitude {
 
     public void MainLonx() {
         Scanner tec = new Scanner(System.in);
+
         String resp;
+        String resp2;
 
-        String[] opciones = {"Transformar Kms a Millas", "Transformar Millas a Kms", "Transformar Millas a Pulgadas", "Transformar Pulgadas a Millas", "Salir"};
+        String[] opciones = {"KMS", "Metros", "Cms", "Pulgadas", "Yardas", "Pés", "Millas", "Millas náuticas", "Salir"};
+
         do {
-            resp = (String) JOptionPane.showInputDialog(null, "Seleccione una opcion: ", "Menu", JOptionPane.DEFAULT_OPTION, null, opciones, opciones[0]);
-            switch (resp) {
-                case "Transformar Kms a Millas":
-                    KmsMillas(tec.nextDouble());
-                    break;
-                case "Transformar Millas a Kms":
+            resp = (String) JOptionPane.showInputDialog(null, "Seleccione valor: ", "Menu", JOptionPane.DEFAULT_OPTION, null, opciones, opciones[0]);
 
-                    System.out.println("Introduce un número: ");
-                    MillasKM(tec.nextDouble());
+            if (resp.equals("Salir")) {
+                break;
+            }
+
+            System.out.println("Introduce " + resp);
+
+            double valor = tec.nextDouble();
+
+            double base = AmetrosTodo(resp, valor);
+
+            resp2 = (String) JOptionPane.showInputDialog(null, "Seleccione conversion"
+                    + ": ", "Menu", JOptionPane.DEFAULT_OPTION, null, opciones, opciones[0]);
+            switch (resp2) {
+
+                case "KMS":
+                    ConversionFinal(resp2, base);
                     break;
-                case "Transformar Millas a Pulgadas":
-                    System.out.println("Dime un número");
-                    MillasPulgadas(tec.nextDouble());
+
+                case "Metros":
+                    ConversionFinal(resp2, base);
                     break;
-                case "Transformar Pulgadas a Millas":
-                    PulgadaMillas();
+
+                case "Cms":
+                    ConversionFinal(resp2, base);
+                    break;
+
+                case "Pulgadas":
+                    ConversionFinal(resp2, base);
+                    break;
+
+                case "Yardas":
+                    ConversionFinal(resp2, base);
+                    break;
+
+                case "Pés":
+                    ConversionFinal(resp2, base);
+                    break;
+
+                case "Millas":
+                    ConversionFinal(resp2, base);
+                    break;
+
+                case "Millas náuticas":
+                    ConversionFinal(resp2, base);
                     break;
             }
-        } while (!resp.equals("Salir"));
-    }
 
-    public void KmsMillas(double valor) {
-        double res;
-        res = valor * 0.6214;
-        System.out.println("El resultado de la conversión es: " + res);
+        } while ((!resp.equals("Salir")) || (!resp2.equals("Salir")));
 
     }
 
-    public void PulgadaMillas() {
-        System.out.println("Introduce el valor en pulgadas:");
-        Scanner tec = new Scanner(System.in);
-        double valor = tec.nextDouble();
-        double millas = Math.round((valor / 63360) * 100) / 100;
-        System.out.println("El valor de " + valor + " pulgadas son " + millas + " millas");
+    public Double AmetrosTodo(String resp, double valor) {
+
+        double metros = 0;
+
+        switch (resp) {
+
+            case "KMS":
+                metros = valor * 1000;
+                break;
+
+            case "Metros":
+                metros = valor;
+                break;
+
+            case "Cms":
+                metros = valor / 100;
+                break;
+
+            case "Pulgadas":
+                metros = valor / 39.37;
+                break;
+
+            case "Yardas":
+                metros = valor / 1.094;
+                break;
+
+            case "Pés":
+                metros = valor / 3.281;
+                break;
+
+            case "Millas":
+                metros = valor * 1609.344;
+
+                break;
+
+            case "Millas náuticas":
+                metros = valor * 1852;
+                break;
+        }
+        return metros;
 
     }
 
-    public void MillasKM(double num) {
-        double KM = num * (1.609);
-        System.out.println("El numero " + num + " en KM es " + KM);
+    public void ConversionFinal(String resp2, double base) {
 
+        double resultado = 0;
+
+        switch (resp2) {
+
+            case "KMS":
+                resultado = base / 1000;
+                break;
+
+            case "Metros":
+                resultado = base;
+                break;
+
+            case "Cms":
+                resultado = base * 100;
+                break;
+
+            case "Pulgadas":
+                resultado = base * 39.37;
+                break;
+
+            case "Yardas":
+                resultado = base * 1.094;
+                break;
+
+            case "Pés":
+                resultado = base * 3.281;
+                break;
+
+            case "Millas":
+                resultado = base / 1609.344;
+
+                break;
+
+            case "Millas náuticas":
+                resultado = base / 1852;
+                break;
+        }
+        System.out.println("El resultado de la conversion a " + resp2 + " es: " + resultado);
     }
 
-    public void MillasPulgadas(double milla) {
-        double conversion = milla * 63360;
-        System.out.println("El número" + milla + " en pulgadas es: " + conversion);
-
-    }
 }
