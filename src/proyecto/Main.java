@@ -3,6 +3,14 @@ package proyecto;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
+/**
+ *
+ * @author Diego Gabella Ocampo (JEFE)
+ *         Beatriz Feijoo Tain
+ *         Cristina Martínez Ferro
+ *         Adrián Aguiar González
+ */
+
 public class Main {
 
     public static void main(String[] args) {
