@@ -10,57 +10,129 @@ public class Potencia {
 
     public void MainPot() {
         Scanner tec = new Scanner(System.in);
+
         String resp;
+        String resp2;
 
-        String[] opciones = {"KW a CV", "CV a KW", "KW a Ft/Lb", "Ft/Lb a KW", "Salir"};
+        String[] opciones = {"Vatio", "KW", "CV", "CF", "MW", "Pé/Libra", "Salir"};
+
         do {
-            resp = (String) JOptionPane.showInputDialog(null, "Seleccione una opcion: ", "Menu", JOptionPane.DEFAULT_OPTION, null, opciones, opciones[0]);
-            switch (resp) {
-                case "KW a CV":
-                    System.out.println("Dime un número en kw");
-                    KWaCV(tec.nextDouble());
-                    break;
-                case "CV a KW":
+            resp = (String) JOptionPane.showInputDialog(null, "Seleccione valor: ", "Menu", JOptionPane.DEFAULT_OPTION, null, opciones, opciones[0]);
 
-                    System.out.println("Introduce un número: ");
-                    CVaKW(tec.nextDouble());
+            if (resp.equals("Salir")) {
+                break;
+            }
 
-                    break;
-                case "KW a Ft/Lb":
-                    System.out.println("Escribe un numero:");
-                    KWaFtLb(tec.nextDouble());
+            System.out.println("Introduce " + resp);
 
+            double valor = tec.nextDouble();
+
+            double base = AvatiosTodo(resp, valor);
+
+            resp2 = (String) JOptionPane.showInputDialog(null, "Seleccione conversion"
+                    + ": ", "Menu", JOptionPane.DEFAULT_OPTION, null, opciones, opciones[0]);
+            switch (resp2) {
+
+                case "Vatio":
+                    ConversionFinal(resp2, base);
                     break;
-                case "Ft/Lb a KW":
-                    FtLb_To_KW();
+
+                case "KW":
+                    ConversionFinal(resp2, base);
+                    break;
+
+                case "CV":
+                    ConversionFinal(resp2, base);
+                    break;
+
+                case "CF":
+                    ConversionFinal(resp2, base);
+                    break;
+
+                case "MW":
+                    ConversionFinal(resp2, base);
+                    break;
+
+                case "Pé/Libra":
+                    ConversionFinal(resp2, base);
+                    break;
+
+                case "Salir":
+                    ConversionFinal(resp2, base);
                     break;
             }
-        } while (!resp.equals("Salir"));
-    }
 
-    public void FtLb_To_KW() {
-        System.out.println("Introduce el valor:");
-        Scanner tec = new Scanner(System.in);
-        double valor = tec.nextDouble();
-        double millas = Math.round((valor * 0.0014) * 100) / 100;
-        System.out.println("El valor de " + valor + " FtLb son " + millas + " KW");
+        } while ((!resp.equals("Salir")) || (!resp2.equals("Salir")));
 
     }
 
-    public void CVaKW(double num) {
-        double KW = num * (0.7457);
-        System.out.println("El numero " + num + " en KW es " + KW);
+
+    public Double AvatiosTodo(String resp, double valor) {
+
+        double vatios = 0;
+
+        switch (resp) {
+
+            case "Vatio":
+                vatios = valor;
+                break;
+
+            case "KW":
+                vatios = valor / 1000;
+                break;
+
+            case "CV":
+                vatios = valor / 735.499;
+                break;
+
+            case "CF":
+                vatios = valor / 745.7;
+                break;
+
+            case "MW":
+                vatios = valor * 1000;
+                break;
+
+            case "Pé/Libra":
+                vatios = valor * 0.7376;
+                break;
+
+        }
+        return vatios;
+
+    }
+    public void ConversionFinal(String resp2, double base) {
+
+        double resultado = 0;
+
+        switch (resp2) {
+
+            case "Vatio":
+                resultado = base;
+                break;
+
+            case "KW":
+                resultado = base * 1000;
+                break;
+
+            case "CV":
+                resultado = base * 735.499;
+                break;
+
+            case "CF":
+                resultado = base * 745.7;
+                break;
+
+            case "MW":
+                resultado = base / 1000;
+                break;
+
+            case "Pé/Libra":
+                resultado = base  / 0.7376;
+                break;
+        }
+        System.out.println("El resultado de la conversion a " + resp2 + " es: " + resultado);
     }
 
-    public void KWaCV(double KW) {
-        double conversion = KW * 1.34102;
-        System.out.println("El número " + KW + " en CV es: " + conversion);
-
-    }
-
-    public void KWaFtLb(double valor) {
-        double res = valor * 737.562149;
-        System.out.println("El resultado de la conversion es: " + res);
-
-    }
 }
+
